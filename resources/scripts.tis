@@ -1,0 +1,17 @@
+  function self.ready() {
+       
+    var vlist = $(table);
+    
+    // feed it by these records
+
+    var myDbRecords = view.getUsers();
+
+    var mysql_results = JSON.parse(myDbRecords);
+
+    // view.msgbox(#alert, myDbRecords);
+    vlist.value = mysql_results;
+
+    // setting first item as current:    
+    vlist.tbody.currentIndex = 0;
+    
+  }

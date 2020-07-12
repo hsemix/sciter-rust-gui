@@ -1,0 +1,55 @@
+<html>
+  <head>
+  <title></title>
+  <style>
+    
+    @import url(vgrid.css);
+    
+    table { style-set: vgrid; // see vgrid.css
+            width:*;
+            height:*; } 
+
+    table th:first-child { width:200px; }    
+    table th:nth-child(2) { width:*; }
+
+    table th[order=ascend]  {
+      foreground-image:url(stock:arrow-down);
+      foreground-repeat:no-repeat;
+      foreground-position:100% 50%;
+    } 
+    table th[order=descend]  {
+      foreground-image:url(stock:arrow-up);
+      foreground-repeat:no-repeat;
+      foreground-position:100% 50%;
+    } 
+      
+  </style>
+  <script type="text/tiscript" src="scripts.tis"></script>
+  </head>
+<body>
+
+  <h2>Dynamic recordset mutation in virtual table list</h2>
+  
+  <p>Records array is created with 500 records initially and gets modified dynamically (added,removed,updated). Each 60ms</p> 
+
+  <button #populate>Simulate gradual population</button>
+  <button #mutate>Start random updates</button>
+  
+  <button #addone>add one</button>
+  <button #toLast>go to last</button>
+  <button #copy>copy</button>
+  <button #deleteall>deleteall</button>
+  <button #delete>delete</button>
+
+  <table resizeable>
+    <thead>
+      <tr><th(id).sortable>ID</th><th(name).sortable>Name</th></tr>
+    </thead>
+    <tbody>
+      <tr><td(id)></td><td(name)></td></tr>
+    </tbody>
+  </table>
+ 
+  
+</body>
+</html>
